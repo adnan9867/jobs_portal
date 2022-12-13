@@ -13,13 +13,15 @@ class BaseModel(models.Model):
 
 
 USER_ROLE_CHOICES = (
-    ('Admin', 'Admin'),
-    ('Job_Hunter', 'Job_Hunter'),
+    ("Admin", "Admin"),
+    ("Job_Hunter", "Job_Hunter"),
 )
 
 
 class User(BaseModel, AbstractUser):
-    role = models.CharField(max_length=20, choices=USER_ROLE_CHOICES, default='Job_Hunter')
+    role = models.CharField(
+        max_length=20, choices=USER_ROLE_CHOICES, default="Job_Hunter"
+    )
     email = models.EmailField(unique=True)
 
     def __str__(self):
@@ -34,6 +36,12 @@ class Jobs(BaseModel):
 
 
 class JobApplication(BaseModel):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_in_job_application')
-    job = models.ForeignKey(Jobs, on_delete=models.CASCADE, related_name='job_in_job_application')
-    resume = models.FileField(upload_to='resume', validators=[FileExtensionValidator(['pdf', 'doc', 'docx'])])
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="user_in_job_application"
+    )
+    job = models.ForeignKey(
+        Jobs, on_delete=models.CASCADE, related_name="job_in_job_application"
+    )
+    resume = models.FileField(
+        upload_to="resume", validators=[FileExtensionValidator(["pdf", "doc", "docx"])]
+    )
