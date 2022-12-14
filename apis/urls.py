@@ -4,7 +4,7 @@ from .views import (
     UserLoginViewSet,
     JobViewSet,
     UserJobViewSet,
-    UserJobsApplicationViewSet,
+    UserJobsApplicationViewSet, AdminJobApplicationViewSet,
 )
 
 urlpatterns = [
@@ -12,11 +12,11 @@ urlpatterns = [
     path("signup/", UserSignupViewSet.as_view({"post": "create"}), name="signup"),
     path("login/", UserLoginViewSet.as_view({"post": "create"}), name="login"),
     # Admin Job APIs
-    path("admin_jobs/", JobViewSet.as_view({"post": "create"}), name="admin_jobs"),
+    path("create_job/", JobViewSet.as_view({"post": "create"}), name="admin_jobs"),
     path(
         "admin_jobs_list/", JobViewSet.as_view({"get": "list"}), name="admin_jobs_list"
     ),
-    path("update_job/", JobViewSet.as_view({"put": "update"}), name="update_job"),
+    path("update_job/<int:pk>", JobViewSet.as_view({"put": "update"}), name="update_job"),
     # User Job APIs
     path(
         "user_jobs_list/",
@@ -37,7 +37,7 @@ urlpatterns = [
     # Admin Job Application List
     path(
         "admin_job_applications/",
-        UserJobsApplicationViewSet.as_view({"get": "list"}),
+        AdminJobApplicationViewSet.as_view({"get": "list"}),
         name="admin_job_applications",
     ),
 ]

@@ -18,8 +18,16 @@ USER_ROLE_CHOICES = (
     ("Job_Hunter", "Job_Hunter"),
 )
 
+CHOICE_IN_JOB_TYPE = (
+    ("Full_Time", "Full_Time"),
+    ("Part_Time", "Part_Time"),
+    ("Internship", "Internship"),
+    ("Contract", "Contract"),
+)
+
 
 class User(BaseModel, AbstractUser):
+    username = None
     role = models.CharField(
         max_length=20, choices=USER_ROLE_CHOICES, default="Job_Hunter"
     )
@@ -36,6 +44,7 @@ class Jobs(BaseModel):
     title = models.CharField(max_length=255)
     description = models.TextField()
     location = models.CharField(max_length=255)
+    job_type = models.CharField(max_length=20, choices=CHOICE_IN_JOB_TYPE, default="Full_Time")
     occupied = models.BooleanField(default=False)
 
 

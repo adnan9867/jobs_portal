@@ -20,7 +20,7 @@ class UserSignupSerializer(serializers.ModelSerializer):
 
 
 class LoginSerializers(serializers.Serializer):  # noqa
-    email = serializers.CharField(max_length=255)
+    email = serializers.EmailField(write_only=True)
     password = serializers.CharField(
         label=_("Password"),
         style={"input_type": "password"},
@@ -30,13 +30,13 @@ class LoginSerializers(serializers.Serializer):  # noqa
     )
 
     def validate(self, data):
-        username = data.get("email")
+        email = data.get("email")
         password = data.get("password")
 
-        if username and password:
+        if email and password:
             user = authenticate(
                 request=self.context.get("request"),
-                username=username,
+                username=email,
                 password=password,
             )
             if not user:
@@ -49,7 +49,9 @@ class LoginSerializers(serializers.Serializer):  # noqa
         data = {
             "access_token": str(refresh.access_token),
             "refresh_token": str(refresh),
-            "user": user.id,
+            "user_id": user.id,
+            "email": user.email,
+            "role": user.role,
         }
         return data
 
@@ -57,7 +59,7 @@ class LoginSerializers(serializers.Serializer):  # noqa
 class UserListSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ["id", "email", "first_name", "last_name", "username"]
+        fields = ["id", "email", "first_name", "last_name"]
 
 
 class JobSerializer(serializers.ModelSerializer):
@@ -69,11 +71,19 @@ class JobSerializer(serializers.ModelSerializer):
 class UserJobSerializer(serializers.ModelSerializer):
     class Meta:
         model = Jobs
-        fields = ["id", "title", "description", "location"]
+        fields = ["id", "title", "description", "location", 'job_type', 'created_at', 'updated_at']
 
 
 class JobApplicationSerializer(serializers.ModelSerializer):
     user = UserListSerializer(read_only=True)
+    job = UserJobSerializer(read_only=True)
+
+    class Meta:
+        model = JobApplication
+        fields = "__all__"
+
+
+class JobApplicationSerializerNew(serializers.ModelSerializer):
 
     class Meta:
         model = JobApplication
