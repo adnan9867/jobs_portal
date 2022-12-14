@@ -53,5 +53,4 @@ Now you can run the development server using following command:
 ```shell
 python manage.py runserver
 ```
-
-
+By default, the app will run on port 8000. To access the app, go to http://localhost:8000
