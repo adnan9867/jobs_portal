@@ -2,9 +2,10 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import FileExtensionValidator
 
+from apis.custom_manager import UserManager
+
 
 class BaseModel(models.Model):
-    is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -23,9 +24,12 @@ class User(BaseModel, AbstractUser):
         max_length=20, choices=USER_ROLE_CHOICES, default="Job_Hunter"
     )
     email = models.EmailField(unique=True)
+    objects = UserManager()
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = []
 
     def __str__(self):
-        return self.username
+        return self.email
 
 
 class Jobs(BaseModel):

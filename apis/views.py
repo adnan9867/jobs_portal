@@ -7,7 +7,8 @@ from apis.serializers import (
     UserSignupSerializer,
     LoginSerializers,
     JobSerializer,
-    JobApplicationSerializer, UserJobSerializer,
+    JobApplicationSerializer,
+    UserJobSerializer,
 )
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 
@@ -235,7 +236,7 @@ class AdminJobApplicationViewSet(ModelViewSet):
 
     def list(self, request, *args, **kwargs):
         try:
-            queryset = self.queryset.all().order_by('-id')
+            queryset = self.queryset.all().order_by("-id")
             serializer = self.serializer_class(queryset, many=True)
             return Response(
                 {
