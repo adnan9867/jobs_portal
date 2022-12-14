@@ -3,12 +3,23 @@ This is a simple jobs portal built using Django and Django Rest Framework.
 User can register and login to the portal. Once logged in, user can view the list of jobs posted by Admin. 
 User can apply for the job by submitting the resume. User can also view the list of jobs applied by him.
 
-### Setup
-
 The first thing to do is to clone the repository:
 ```shell
 git clone "enter_here_link"
 ```
+
+### Setup With Docker
+1. Install Docker and Docker Compose
+2. To build the image, run the command below:
+```shell
+docker build . -t docker-django-v0.0.1
+```
+To run the app, execute the below command:
+```shell
+docker run docker-django-v0.0.1
+```
+By default, the app will run on port 8000. To access the app, go to http://localhost:8000
+### Setup Without Docker
 Create a virtual environment to install dependencies in and activate it:
 run following command to install python-env
 
