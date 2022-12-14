@@ -14,14 +14,13 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser
 
 
 class UserSignupViewSet(ModelViewSet):
-    """
-    Create a new user.
-    """
-
     queryset = User.objects.all()
     serializer_class = UserSignupSerializer
 
     def create(self, request, *args, **kwargs):
+        """
+        Create a new user.
+        """
         try:
             data = request.data
             serializer = self.get_serializer(data=data)
@@ -44,14 +43,13 @@ class UserSignupViewSet(ModelViewSet):
 
 
 class UserLoginViewSet(ModelViewSet):
-    """
-    Login a user with a given email and password.
-    """
-
     queryset = User.objects.all()
     serializer_class = LoginSerializers
 
     def create(self, request, *args, **kwargs):
+        """
+        Login a user with a given email and password.
+        """
         try:
             data = request.data
             serializer = self.get_serializer(data=data)
@@ -235,6 +233,9 @@ class AdminJobApplicationViewSet(ModelViewSet):
     permission_classes = IsAdminUser
 
     def list(self, request, *args, **kwargs):
+        """
+        List all jobs applied by a user.
+        """
         try:
             queryset = self.queryset.all().order_by("-id")
             serializer = self.serializer_class(queryset, many=True)
