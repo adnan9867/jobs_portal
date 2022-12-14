@@ -1,0 +1,1140 @@
+{
+	"info": {
+		"_postman_id": "f4f95b91-29a4-434e-81a6-d684fd2e992b",
+		"name": "Jobs Portal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19045177"
+	},
+	"item": [
+		{
+			"name": "User Module",
+			"item": [
+				{
+					"name": "User Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\" : \"fName\",\n    \"last_name\" : \"lName\",\n    \"email\": \"test@gmail.com\",\n    \"password\": \"Admin123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/signup/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"signup",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User Signup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"first_name\" : \"fName\",\n    \"last_name\" : \"lName\",\n    \"email\": \"test@gmail.com\",\n    \"password\": \"Admin123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/signup/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"signup",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 14 Dec 2022 08:22:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_code\": 201,\n    \"message\": \"User created successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@gmail.com\",\n    \"password\": \"Admin123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"test@gmail.com\",\n    \"password\": \"Admin123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/login/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 14 Dec 2022 08:30:58 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "585"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_code\": 200,\n    \"message\": \"User login successfully\",\n    \"data\": {\n        \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMDA2OTU4LCJqdGkiOiI4Yzg2NWZmNzQ4YzI0NTY4YjQzMTNmZjQ4NmJiNWNjZCIsInVzZXJfaWQiOjJ9.t4k4NOAGOcb5ZpFbD1Y5PYKDqA_rdEsgoacfsXK_xfU\",\n        \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY3MTAwNzI1OCwianRpIjoiYWNlMmQ1Y2VjNTM4NDQ2NmIyNmY4ZGRjMGM5MjhlODMiLCJ1c2VyX2lkIjoyfQ.Zrw5_tv0eiNj_3IZKeeWmUcqtTvPyArJlQ4vWipXjWQ\",\n        \"user_id\": 2,\n        \"email\": \"test@gmail.com\",\n        \"role\": \"Job_Hunter\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Jobs Listing",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMDA4ODMxLCJqdGkiOiIxZGM5YzEwMTljYjA0YjQ3OWMxNDM2MDc1YmE3MjQ3YyIsInVzZXJfaWQiOjJ9.fEN2xbeCHzFyLTS6uEaDlYocEvwZoBYqcn46K8gHZA0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user_jobs_list/?job_title=python&location=lahore",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user_jobs_list",
+								""
+							],
+							"query": [
+								{
+									"key": "job_title",
+									"value": "python"
+								},
+								{
+									"key": "location",
+									"value": "lahore"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Jobs Listing",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user_jobs_list/?job_title=python&location=lahore",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user_jobs_list",
+										""
+									],
+									"query": [
+										{
+											"key": "job_title",
+											"value": "python"
+										},
+										{
+											"key": "location",
+											"value": "lahore"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 14 Dec 2022 11:20:14 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "291"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_code\": 200,\n    \"message\": \"Job list\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"Python Developer\",\n            \"description\": \"Python developer required with exp of 5 years\",\n            \"location\": \"Lahore\",\n            \"job_type\": \"Full_Time\",\n            \"created_at\": \"2022-12-14T08:40:20.715767Z\",\n            \"updated_at\": \"2022-12-14T08:40:20.715843Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Apply Job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMDA4MTg1LCJqdGkiOiI2OGRiZDMwYjVlYTc0Y2ZhOTkyZDYxN2I3MTIzNDk5NyIsInVzZXJfaWQiOjJ9.80fDXTCqQDSkwQG0sEvtILtNAxnpNi8FJj1dkuS8sVg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "resume",
+									"type": "file",
+									"src": "/home/adnan/Downloads/Adnan Ashraf (Python Django Developer)-1-1.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/apply_job/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"apply_job",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Apply Job",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "job",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "resume",
+											"type": "file",
+											"src": "/home/adnan/Downloads/Adnan Ashraf (Python Django Developer)-1-1.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/apply_job/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"apply_job",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 14 Dec 2022 08:51:45 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "262"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_code\": 200,\n    \"message\": \"Job applied successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"created_at\": \"2022-12-14T08:51:45.034975Z\",\n        \"updated_at\": \"2022-12-14T08:51:45.035055Z\",\n        \"resume\": \"/resume/Adnan_Ashraf_Python_Django_Developer-1-1_N9DUBUT.pdf\",\n        \"user\": 2,\n        \"job\": 2\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Job Application List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMDE1OTk0LCJqdGkiOiI0ZDI3NTVmYzM4Njc0YjRiYTFiMTViNTdjMWQ3OWFiYSIsInVzZXJfaWQiOjJ9.2LIGw2i9f8SSI9bif39TD2I8uYPlqocMTgOYe0DYNYQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user_job_applications/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user_job_applications",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Job Application List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user_job_applications/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user_job_applications",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 14 Dec 2022 11:21:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "564"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_code\": 200,\n    \"message\": \"User job application list\",\n    \"data\": [\n        {\n            \"id\": 4,\n            \"user\": {\n                \"id\": 2,\n                \"email\": \"test@gmail.com\",\n                \"first_name\": \"fName\",\n                \"last_name\": \"lName\"\n            },\n            \"job\": {\n                \"id\": 2,\n                \"title\": \"Python Developer\",\n                \"description\": \"Python developer required with exp of 5 years\",\n                \"location\": \"Islamabad\",\n                \"job_type\": \"Full_Time\",\n                \"created_at\": \"2022-12-14T08:40:58.980486Z\",\n                \"updated_at\": \"2022-12-14T11:05:00.560372Z\"\n            },\n            \"created_at\": \"2022-12-14T10:59:30.642029Z\",\n            \"updated_at\": \"2022-12-14T10:59:30.642130Z\",\n            \"resume\": \"/media/resume/Adnan_Ashraf_Python_Django_Developer-1-1.pdf\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admin Module",
+			"item": [
+				{
+					"name": "Admin Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Admin Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"admin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/login/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 14 Dec 2022 08:37:26 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "581"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_code\": 200,\n    \"message\": \"User login successfully\",\n    \"data\": {\n        \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMDA3MzQ2LCJqdGkiOiJjNzM4YmExMGFiNDk0Yzk5YThjY2YxYmQwNmE1NDNkNiIsInVzZXJfaWQiOjF9.6WpA0ahseQwN2U3nFEZXjHX1K3_U4mBEQNPCol8rBLk\",\n        \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY3MTAwNzY0NiwianRpIjoiMGYxMDBlNjFmMjcyNGNjYjgwYmQ1NzU0OTRhOTM4ODIiLCJ1c2VyX2lkIjoxfQ.wUZ90RyHu_cgP6zsQ6a8SszRsTsNz6pHXbjbWuhlZcA\",\n        \"user_id\": 1,\n        \"email\": \"admin@gmail.com\",\n        \"role\": \"Admin\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMDA3MzQ2LCJqdGkiOiJjNzM4YmExMGFiNDk0Yzk5YThjY2YxYmQwNmE1NDNkNiIsInVzZXJfaWQiOjF9.6WpA0ahseQwN2U3nFEZXjHX1K3_U4mBEQNPCol8rBLk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Python Developer\",\n    \"location\": \"Islamabad\",\n    \"description\": \"Python developer required with exp of 5 years\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/create_job/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"create_job",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Job",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Python Developer\",\n    \"location\": \"Islamabad\",\n    \"description\": \"Python developer required with exp of 5 years\",\n    \"job_type\": \"Full_Time\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/create_job/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"create_job",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 14 Dec 2022 11:17:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "325"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_code\": 201,\n    \"message\": \"Job created successfully\",\n    \"data\": {\n        \"id\": 3,\n        \"created_at\": \"2022-12-14T11:17:38.186833Z\",\n        \"updated_at\": \"2022-12-14T11:17:38.187013Z\",\n        \"title\": \"Python Developer\",\n        \"description\": \"Python developer required with exp of 5 years\",\n        \"location\": \"Islamabad\",\n        \"job_type\": \"Full_Time\",\n        \"occupied\": false\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Job Listing",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMDA3MzQ2LCJqdGkiOiJjNzM4YmExMGFiNDk0Yzk5YThjY2YxYmQwNmE1NDNkNiIsInVzZXJfaWQiOjF9.6WpA0ahseQwN2U3nFEZXjHX1K3_U4mBEQNPCol8rBLk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin_jobs_list/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin_jobs_list",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Job Listing",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin_jobs_list/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin_jobs_list",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 14 Dec 2022 11:18:14 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "801"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_code\": 200,\n    \"message\": \"Job list\",\n    \"data\": [\n        {\n            \"id\": 3,\n            \"created_at\": \"2022-12-14T11:17:38.186833Z\",\n            \"updated_at\": \"2022-12-14T11:17:38.187013Z\",\n            \"title\": \"Python Developer\",\n            \"description\": \"Python developer required with exp of 5 years\",\n            \"location\": \"Islamabad\",\n            \"job_type\": \"Full_Time\",\n            \"occupied\": false\n        },\n        {\n            \"id\": 2,\n            \"created_at\": \"2022-12-14T08:40:58.980486Z\",\n            \"updated_at\": \"2022-12-14T11:05:00.560372Z\",\n            \"title\": \"Python Developer\",\n            \"description\": \"Python developer required with exp of 5 years\",\n            \"location\": \"Islamabad\",\n            \"job_type\": \"Full_Time\",\n            \"occupied\": true\n        },\n        {\n            \"id\": 1,\n            \"created_at\": \"2022-12-14T08:40:20.715767Z\",\n            \"updated_at\": \"2022-12-14T08:40:20.715843Z\",\n            \"title\": \"Python Developer\",\n            \"description\": \"Python developer required with exp of 5 years\",\n            \"location\": \"Lahore\",\n            \"job_type\": \"Full_Time\",\n            \"occupied\": false\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMDE2MDQ3LCJqdGkiOiI5ZjU4ZDRhZDE4MTg0ZDc4YTI3MmYxNzc3Y2Q5ZDQzNSIsInVzZXJfaWQiOjF9.1T1Uj2Q0DJ4-gQGzG2ivprb7efA0ZGMSeYw9eN3I9Vw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"title\": \"Python Developer\",\n            \"description\": \"Python developer required with exp of 5 years\",\n            \"location\": \"Islamabad\",\n            \"occupied\": true\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/update_job/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"update_job",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Job",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n            \"title\": \"Python Developer\",\n            \"description\": \"Python developer required with exp of 5 years\",\n            \"location\": \"Islamabad\",\n            \"occupied\": true\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/update_job/2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"update_job",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 14 Dec 2022 11:05:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "PUT, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_code\": 200,\n    \"message\": \"Job updated successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Job Application List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMDE2MjQ1LCJqdGkiOiI0OGVjODliZDUwNjk0NzBlOTJmNDQ0Mjg4N2ZkOTQ1YyIsInVzZXJfaWQiOjF9.3NXzcDF4fvKfGyzagL98IPlx8HPdzoeKa5LMiD75BUk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin_job_applications/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin_job_applications",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Job Application List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin_job_applications/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin_job_applications",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 14 Dec 2022 11:19:11 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "559"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status_code\": 200,\n    \"data\": [\n        {\n            \"id\": 4,\n            \"user\": {\n                \"id\": 2,\n                \"email\": \"test@gmail.com\",\n                \"first_name\": \"fName\",\n                \"last_name\": \"lName\"\n            },\n            \"job\": {\n                \"id\": 2,\n                \"title\": \"Python Developer\",\n                \"description\": \"Python developer required with exp of 5 years\",\n                \"location\": \"Islamabad\",\n                \"job_type\": \"Full_Time\",\n                \"created_at\": \"2022-12-14T08:40:58.980486Z\",\n                \"updated_at\": \"2022-12-14T11:05:00.560372Z\"\n            },\n            \"created_at\": \"2022-12-14T10:59:30.642029Z\",\n            \"updated_at\": \"2022-12-14T10:59:30.642130Z\",\n            \"resume\": \"/media/resume/Adnan_Ashraf_Python_Django_Developer-1-1.pdf\"\n        }\n    ],\n    \"message\": \"Job application list\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
